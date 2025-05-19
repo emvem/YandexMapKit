@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		DDFF94792DDB62C100F7A19A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDFF945A2DDB62BF00F7A19A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDFF94612DDB62BF00F7A19A;
+			remoteInfo = YandexMapKit;
+		};
+		DDFF94832DDB62C100F7A19A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDFF945A2DDB62BF00F7A19A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDFF94612DDB62BF00F7A19A;
+			remoteInfo = YandexMapKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DDFF94622DDB62BF00F7A19A /* YandexMapKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMapKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFF94782DDB62C100F7A19A /* YandexMapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YandexMapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFF94822DDB62C100F7A19A /* YandexMapKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YandexMapKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DDFF948A2DDB62C100F7A19A /* Exceptions for "YandexMapKit" folder in "YandexMapKit" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DDFF94612DDB62BF00F7A19A /* YandexMapKit */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DDFF94642DDB62BF00F7A19A /* YandexMapKit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DDFF948A2DDB62C100F7A19A /* Exceptions for "YandexMapKit" folder in "YandexMapKit" target */,
+			);
+			path = YandexMapKit;
+			sourceTree = "<group>";
+		};
+		DDFF947B2DDB62C100F7A19A /* YandexMapKitTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = YandexMapKitTests;
+			sourceTree = "<group>";
+		};
+		DDFF94852DDB62C100F7A19A /* YandexMapKitUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = YandexMapKitUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDFF945F2DDB62BF00F7A19A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFF94752DDB62C100F7A19A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFF947F2DDB62C100F7A19A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDFF94592DDB62BF00F7A19A = {
+			isa = PBXGroup;
+			children = (
+				DDFF94642DDB62BF00F7A19A /* YandexMapKit */,
+				DDFF947B2DDB62C100F7A19A /* YandexMapKitTests */,
+				DDFF94852DDB62C100F7A19A /* YandexMapKitUITests */,
+				DDFF94632DDB62BF00F7A19A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDFF94632DDB62BF00F7A19A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF94622DDB62BF00F7A19A /* YandexMapKit.app */,
+				DDFF94782DDB62C100F7A19A /* YandexMapKitTests.xctest */,
+				DDFF94822DDB62C100F7A19A /* YandexMapKitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDFF94612DDB62BF00F7A19A /* YandexMapKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDFF948B2DDB62C100F7A19A /* Build configuration list for PBXNativeTarget "YandexMapKit" */;
+			buildPhases = (
+				DDFF945E2DDB62BF00F7A19A /* Sources */,
+				DDFF945F2DDB62BF00F7A19A /* Frameworks */,
+				DDFF94602DDB62BF00F7A19A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DDFF94642DDB62BF00F7A19A /* YandexMapKit */,
+			);
+			name = YandexMapKit;
+			packageProductDependencies = (
+			);
+			productName = YandexMapKit;
+			productReference = DDFF94622DDB62BF00F7A19A /* YandexMapKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDFF94772DDB62C100F7A19A /* YandexMapKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDFF94902DDB62C100F7A19A /* Build configuration list for PBXNativeTarget "YandexMapKitTests" */;
+			buildPhases = (
+				DDFF94742DDB62C100F7A19A /* Sources */,
+				DDFF94752DDB62C100F7A19A /* Frameworks */,
+				DDFF94762DDB62C100F7A19A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDFF947A2DDB62C100F7A19A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DDFF947B2DDB62C100F7A19A /* YandexMapKitTests */,
+			);
+			name = YandexMapKitTests;
+			packageProductDependencies = (
+			);
+			productName = YandexMapKitTests;
+			productReference = DDFF94782DDB62C100F7A19A /* YandexMapKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DDFF94812DDB62C100F7A19A /* YandexMapKitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDFF94932DDB62C100F7A19A /* Build configuration list for PBXNativeTarget "YandexMapKitUITests" */;
+			buildPhases = (
+				DDFF947E2DDB62C100F7A19A /* Sources */,
+				DDFF947F2DDB62C100F7A19A /* Frameworks */,
+				DDFF94802DDB62C100F7A19A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDFF94842DDB62C100F7A19A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DDFF94852DDB62C100F7A19A /* YandexMapKitUITests */,
+			);
+			name = YandexMapKitUITests;
+			packageProductDependencies = (
+			);
+			productName = YandexMapKitUITests;
+			productReference = DDFF94822DDB62C100F7A19A /* YandexMapKitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDFF945A2DDB62BF00F7A19A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					DDFF94612DDB62BF00F7A19A = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					DDFF94772DDB62C100F7A19A = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = DDFF94612DDB62BF00F7A19A;
+					};
+					DDFF94812DDB62C100F7A19A = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = DDFF94612DDB62BF00F7A19A;
+					};
+				};
+			};
+			buildConfigurationList = DDFF945D2DDB62BF00F7A19A /* Build configuration list for PBXProject "YandexMapKit" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDFF94592DDB62BF00F7A19A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DDFF94632DDB62BF00F7A19A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDFF94612DDB62BF00F7A19A /* YandexMapKit */,
+				DDFF94772DDB62C100F7A19A /* YandexMapKitTests */,
+				DDFF94812DDB62C100F7A19A /* YandexMapKitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDFF94602DDB62BF00F7A19A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFF94762DDB62C100F7A19A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFF94802DDB62C100F7A19A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDFF945E2DDB62BF00F7A19A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFF94742DDB62C100F7A19A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFF947E2DDB62C100F7A19A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDFF947A2DDB62C100F7A19A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDFF94612DDB62BF00F7A19A /* YandexMapKit */;
+			targetProxy = DDFF94792DDB62C100F7A19A /* PBXContainerItemProxy */;
+		};
+		DDFF94842DDB62C100F7A19A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDFF94612DDB62BF00F7A19A /* YandexMapKit */;
+			targetProxy = DDFF94832DDB62C100F7A19A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DDFF948C2DDB62C100F7A19A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YandexMapKit/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emvem.YandexMapKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDFF948D2DDB62C100F7A19A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YandexMapKit/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emvem.YandexMapKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDFF948E2DDB62C100F7A19A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DDFF948F2DDB62C100F7A19A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDFF94912DDB62C100F7A19A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emvem.YandexMapKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YandexMapKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YandexMapKit";
+			};
+			name = Debug;
+		};
+		DDFF94922DDB62C100F7A19A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emvem.YandexMapKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YandexMapKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YandexMapKit";
+			};
+			name = Release;
+		};
+		DDFF94942DDB62C100F7A19A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emvem.YandexMapKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YandexMapKit;
+			};
+			name = Debug;
+		};
+		DDFF94952DDB62C100F7A19A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emvem.YandexMapKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YandexMapKit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDFF945D2DDB62BF00F7A19A /* Build configuration list for PBXProject "YandexMapKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFF948E2DDB62C100F7A19A /* Debug */,
+				DDFF948F2DDB62C100F7A19A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDFF948B2DDB62C100F7A19A /* Build configuration list for PBXNativeTarget "YandexMapKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFF948C2DDB62C100F7A19A /* Debug */,
+				DDFF948D2DDB62C100F7A19A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDFF94902DDB62C100F7A19A /* Build configuration list for PBXNativeTarget "YandexMapKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFF94912DDB62C100F7A19A /* Debug */,
+				DDFF94922DDB62C100F7A19A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDFF94932DDB62C100F7A19A /* Build configuration list for PBXNativeTarget "YandexMapKitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFF94942DDB62C100F7A19A /* Debug */,
+				DDFF94952DDB62C100F7A19A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDFF945A2DDB62BF00F7A19A /* Project object */;
+}
