@@ -1,6 +1,15 @@
 {
-  "originHash" : "502eb10d73a6b926313b03e2f5ee600740279bf167d417dbf65e8f7471592af8",
+  "originHash" : "d4f342e0cefb08f6258fdb51f485c03dce9d61c43d84f03398bb9d810d1067be",
   "pins" : [
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
+      }
+    },
     {
       "identity" : "yandexmapsmobile",
       "kind" : "remoteSourceControl",

@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DDFF94B22DDB666100F7A19A /* YandexMapsMobile in Frameworks */ = {isa = PBXBuildFile; productRef = DDFF94B12DDB666100F7A19A /* YandexMapsMobile */; };
+		DDFF94B52DDB671400F7A19A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDFF94B42DDB671400F7A19A /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		DDFF94792DDB62C100F7A19A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFF94B22DDB666100F7A19A /* YandexMapsMobile in Frameworks */,
+				DDFF94B52DDB671400F7A19A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +132,8 @@
 			);
 			name = YandexMapKit;
 			packageProductDependencies = (
+				DDFF94B12DDB666100F7A19A /* YandexMapsMobile */,
+				DDFF94B42DDB671400F7A19A /* SnapKit */,
 			);
 			productName = YandexMapKit;
 			productReference = DDFF94622DDB62BF00F7A19A /* YandexMapKit.app */;
@@ -210,6 +219,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				DDFF94962DDB649A00F7A19A /* XCRemoteSwiftPackageReference "YandexMapsMobile" */,
+				DDFF94B32DDB671400F7A19A /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DDFF94632DDB62BF00F7A19A /* Products */;
@@ -393,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -450,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -578,7 +588,28 @@
 				version = 4.15.0;
 			};
 		};
+		DDFF94B32DDB671400F7A19A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDFF94B12DDB666100F7A19A /* YandexMapsMobile */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDFF94962DDB649A00F7A19A /* XCRemoteSwiftPackageReference "YandexMapsMobile" */;
+			productName = YandexMapsMobile;
+		};
+		DDFF94B42DDB671400F7A19A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDFF94B32DDB671400F7A19A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DDFF945A2DDB62BF00F7A19A /* Project object */;
 }
