@@ -208,6 +208,9 @@
 			);
 			mainGroup = DDFF94592DDB62BF00F7A19A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DDFF94962DDB649A00F7A19A /* XCRemoteSwiftPackageReference "YandexMapsMobile" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DDFF94632DDB62BF00F7A19A /* Products */;
 			projectDirPath = "";
@@ -565,6 +568,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDFF94962DDB649A00F7A19A /* XCRemoteSwiftPackageReference "YandexMapsMobile" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/c-villain/YandexMapsMobile";
+			requirement = {
+				kind = exactVersion;
+				version = 4.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = DDFF945A2DDB62BF00F7A19A /* Project object */;
 }
