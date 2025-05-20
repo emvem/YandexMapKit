@@ -1,5 +1,5 @@
 {
-  "originHash" : "7c458e99b469fd168509f21dd7f90f1f515bd2fb53c7b0e6e90e298513c7c07f",
+  "originHash" : "d4f342e0cefb08f6258fdb51f485c03dce9d61c43d84f03398bb9d810d1067be",
   "pins" : [
     {
       "identity" : "snapkit",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/c-villain/YandexMapsMobile",
       "state" : {
-        "revision" : "d5d2c4b92c519fa3d220eeaa057b0d27b3dbb149",
-        "version" : "4.3.1"
+        "revision" : "095e4f297fda3e2b1be7d71a13cfaea72d8c411c",
+        "version" : "4.15.0"
       }
     }
   ],

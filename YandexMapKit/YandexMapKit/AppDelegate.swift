@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let apiKey = "522fb9ba-acc3-4c2a-ad64-371448cace44"
         YMKMapKit.setApiKey(apiKey)
-        YMKMapKit.sharedInstance().onStart()
+        YMKMapKit.sharedInstance()
 
         return true
     }

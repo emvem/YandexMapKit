@@ -16,6 +16,8 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .yellow
+        
         view.addSubview(mapView)
         mapView.snp.makeConstraints {
             $0.edges.equalToSuperview()

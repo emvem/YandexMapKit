@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DDFF94B22DDB666100F7A19A /* YandexMapsMobile in Frameworks */ = {isa = PBXBuildFile; productRef = DDFF94B12DDB666100F7A19A /* YandexMapsMobile */; };
-		DDFF94B52DDB671400F7A19A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDFF94B42DDB671400F7A19A /* SnapKit */; };
+		DD86C0E22DDC5640006678AC /* YandexMapsMobile in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C0E12DDC5640006678AC /* YandexMapsMobile */; };
+		DD86C0E52DDC564C006678AC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C0E42DDC564C006678AC /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDFF94B22DDB666100F7A19A /* YandexMapsMobile in Frameworks */,
-				DDFF94B52DDB671400F7A19A /* SnapKit in Frameworks */,
+				DD86C0E22DDC5640006678AC /* YandexMapsMobile in Frameworks */,
+				DD86C0E52DDC564C006678AC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,10 +131,6 @@
 				DDFF94642DDB62BF00F7A19A /* YandexMapKit */,
 			);
 			name = YandexMapKit;
-			packageProductDependencies = (
-				DDFF94B12DDB666100F7A19A /* YandexMapsMobile */,
-				DDFF94B42DDB671400F7A19A /* SnapKit */,
-			);
 			productName = YandexMapKit;
 			productReference = DDFF94622DDB62BF00F7A19A /* YandexMapKit.app */;
 			productType = "com.apple.product-type.application";
@@ -156,8 +152,6 @@
 				DDFF947B2DDB62C100F7A19A /* YandexMapKitTests */,
 			);
 			name = YandexMapKitTests;
-			packageProductDependencies = (
-			);
 			productName = YandexMapKitTests;
 			productReference = DDFF94782DDB62C100F7A19A /* YandexMapKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -179,8 +173,6 @@
 				DDFF94852DDB62C100F7A19A /* YandexMapKitUITests */,
 			);
 			name = YandexMapKitUITests;
-			packageProductDependencies = (
-			);
 			productName = YandexMapKitUITests;
 			productReference = DDFF94822DDB62C100F7A19A /* YandexMapKitUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -218,8 +210,8 @@
 			mainGroup = DDFF94592DDB62BF00F7A19A;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				DDFF94962DDB649A00F7A19A /* XCRemoteSwiftPackageReference "YandexMapsMobile" */,
-				DDFF94B32DDB671400F7A19A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				DD86C0E02DDC5640006678AC /* XCRemoteSwiftPackageReference "YandexMapsMobile" */,
+				DD86C0E32DDC564C006678AC /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DDFF94632DDB62BF00F7A19A /* Products */;
@@ -306,15 +298,43 @@
 				INFOPLIST_FILE = YandexMapKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lresolv",
+					"-l\"c++\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"DeviceCheck\"",
+					"-framework",
+					"\"CoreMotion\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = emvem.YandexMapKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -334,15 +354,43 @@
 				INFOPLIST_FILE = YandexMapKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lresolv",
+					"-l\"c++\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"DeviceCheck\"",
+					"-framework",
+					"\"CoreMotion\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = emvem.YandexMapKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -580,15 +628,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DDFF94962DDB649A00F7A19A /* XCRemoteSwiftPackageReference "YandexMapsMobile" */ = {
+		DD86C0E02DDC5640006678AC /* XCRemoteSwiftPackageReference "YandexMapsMobile" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/c-villain/YandexMapsMobile";
 			requirement = {
 				kind = exactVersion;
-				version = 4.3.1;
+				version = 4.15.0;
 			};
 		};
-		DDFF94B32DDB671400F7A19A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		DD86C0E32DDC564C006678AC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -599,14 +647,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DDFF94B12DDB666100F7A19A /* YandexMapsMobile */ = {
+		DD86C0E12DDC5640006678AC /* YandexMapsMobile */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DDFF94962DDB649A00F7A19A /* XCRemoteSwiftPackageReference "YandexMapsMobile" */;
+			package = DD86C0E02DDC5640006678AC /* XCRemoteSwiftPackageReference "YandexMapsMobile" */;
 			productName = YandexMapsMobile;
 		};
-		DDFF94B42DDB671400F7A19A /* SnapKit */ = {
+		DD86C0E42DDC564C006678AC /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DDFF94B32DDB671400F7A19A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = DD86C0E32DDC564C006678AC /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
