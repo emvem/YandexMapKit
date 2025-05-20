@@ -8,11 +8,32 @@
 import UIKit
 import YandexMapsMobile
 import SnapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
     
-    private let mapView = YMKMapView()
+    private let locationManager = LocationManager()
     
+    private let mapView = YMKMapView()
+    private lazy var myLocationButton: UIButton = {
+        let action: UIAction = UIAction { [weak self] _ in
+            guard let location = self?.locationManager.getCurrentLocation() else {
+                return
+            }
+            
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            self?.move(to: YMKPoint(latitude: lat, longitude: lon))
+        }
+        var configuration = UIButton.Configuration.plain()
+        configuration.imagePadding = 8
+        let button = UIButton(configuration: configuration, primaryAction: action)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 32
+        button.setImage(UIImage(named: "current_location"), for: .normal)
+        return button
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +52,13 @@ class MapViewController: UIViewController {
         view.addSubview(mapView)
         mapView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        
+        view.addSubview(myLocationButton)
+        myLocationButton.snp.makeConstraints {
+            $0.size.equalTo(64)
+            $0.trailing.equalToSuperview().offset(-16)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-24)
         }
     }
     
