@@ -14,7 +14,7 @@ class TabBarController: UITabBarController {
         view.backgroundColor = .white
         tabBar.backgroundColor = .white
         
-        let addresses = AddressesViewController()
+        let addresses = AddressesViewController(style: .grouped)
         let addressesNavVC = UINavigationController(rootViewController: addresses)
         addresses.title = "Мои Адреса"
         addressesNavVC.tabBarItem = UITabBarItem(title: nil,
