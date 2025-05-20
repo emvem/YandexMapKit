@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DD86C0E22DDC5640006678AC /* YandexMapsMobile in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C0E12DDC5640006678AC /* YandexMapsMobile */; };
 		DD86C0E52DDC564C006678AC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C0E42DDC564C006678AC /* SnapKit */; };
+		DD86C1002DDC9C25006678AC /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C0FF2DDC9C25006678AC /* SwiftMessages */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD86C0E22DDC5640006678AC /* YandexMapsMobile in Frameworks */,
+				DD86C1002DDC9C25006678AC /* SwiftMessages in Frameworks */,
 				DD86C0E52DDC564C006678AC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +214,7 @@
 			packageReferences = (
 				DD86C0E02DDC5640006678AC /* XCRemoteSwiftPackageReference "YandexMapsMobile" */,
 				DD86C0E32DDC564C006678AC /* XCRemoteSwiftPackageReference "SnapKit" */,
+				DD86C0FE2DDC9C25006678AC /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DDFF94632DDB62BF00F7A19A /* Products */;
@@ -644,6 +647,14 @@
 				version = 5.7.1;
 			};
 		};
+		DD86C0FE2DDC9C25006678AC /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages";
+			requirement = {
+				kind = exactVersion;
+				version = 10.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -656,6 +667,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD86C0E32DDC564C006678AC /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		DD86C0FF2DDC9C25006678AC /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD86C0FE2DDC9C25006678AC /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
