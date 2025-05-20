@@ -9,6 +9,7 @@ import UIKit
 import YandexMapsMobile
 import SnapKit
 import CoreLocation
+import SwiftMessages
 
 class MapViewController: UIViewController {
     
@@ -119,11 +120,28 @@ extension MapViewController: YMKMapCameraListener {
         }
         let name = first.name
         let description = first.descriptionText
-        print("name, ", name)
-        print("description, ", description)
+        openMapObject(title: name, description: description)
     }
 
     func onSearchError(_ error: Error) {
         print("error, ", error)
+    }
+}
+
+extension MapViewController {
+    func openMapObject(title: String?, description: String?) {
+        let messageView = MapObjectMessageView(title: title,
+                                               description: description,
+                                               completion: {
+            print("completion")
+            SwiftMessages.hide()
+        })
+        var config = SwiftMessages.Config()
+        config.presentationContext = .window(windowLevel: .statusBar)
+        config.presentationStyle = .bottom
+        config.duration = .forever
+        config.dimMode = .gray(interactive: false)
+        SwiftMessages.show(config: config, view: messageView)
+
     }
 }
