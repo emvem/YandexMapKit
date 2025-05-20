@@ -35,23 +35,19 @@ class SearchMessageView: MessageView {
     
     private let cornerBackgroundView = CornerRoundingView(frame: .zero)
     
-    private var completion: (() -> Void)?
+    private var completion: ((YMKGeoObject) -> Void)?
     private var searchManager: YMKSearchManager?
     private var searchSession: YMKSearchSession?
     
     private var searchItems: [YMKGeoObject] = []
     
-    init(completion: (() -> Void)?) {
+    init(completion: ((YMKGeoObject) -> Void)?) {
         self.completion = completion
         
         super.init(frame: .zero)
 
         searchManager = YMKSearchFactory.instance().createSearchManager(with: .combined)
         configureUI()
-    }
-    
-    @objc private func continueButtonTap() {
-        completion?()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -109,6 +105,11 @@ extension SearchMessageView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 74
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = searchItems[indexPath.row]
+        completion?(item)
     }
 }
 

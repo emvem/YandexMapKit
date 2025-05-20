@@ -18,17 +18,16 @@ class MapViewController: UIViewController {
     private var searchSession: YMKSearchSession?
     
     private let mapView = YMKMapView()
+    private let searchBar = UISearchBar()
     private lazy var myLocationButton: UIButton = {
         let action: UIAction = UIAction { [weak self] _ in
+            guard let location = self?.locationManager.getCurrentLocation() else {
+                return
+            }
             
-            self?.openSearch()
-//            guard let location = self?.locationManager.getCurrentLocation() else {
-//                return
-//            }
-//            
-//            let lat = location.coordinate.latitude
-//            let lon = location.coordinate.longitude
-//            self?.move(to: YMKPoint(latitude: lat, longitude: lon))
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            self?.move(to: YMKPoint(latitude: lat, longitude: lon))
         }
         var configuration = UIButton.Configuration.plain()
         configuration.imagePadding = 8
@@ -52,8 +51,21 @@ class MapViewController: UIViewController {
 
         setupViews()
         setDefaultLocation()
+        setupSearchBar()
         
         mapView.mapWindow.map.addCameraListener(with: self)
+    }
+    
+    private func setupSearchBar() {
+        searchBar.placeholder = "Поиск"
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        searchBar.addGestureRecognizer(tapGesture)
+        searchBar.searchTextField.isUserInteractionEnabled = false
+    }
+    
+    @objc func handleTap() {
+        openSearch()
     }
     
     private func setDefaultLocation() {
@@ -67,6 +79,12 @@ class MapViewController: UIViewController {
         view.addSubview(mapView)
         mapView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        
+        view.addSubview(searchBar)
+        searchBar.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+            $0.height.equalTo(64)
         }
         
         view.addSubview(myLocationButton)
@@ -141,8 +159,12 @@ extension MapViewController {
     }
     
     func openSearch() {
-        let messageView = SearchMessageView(completion: {
+        let messageView = SearchMessageView(completion: { [weak self] item in
             SwiftMessages.hide()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                self?.searchBar.text = item.name
+                self?.openMapObject(title: item.name, description: item.descriptionText)
+            })
         })
         var config = SwiftMessages.Config()
         config.presentationContext = .window(windowLevel: .statusBar)
