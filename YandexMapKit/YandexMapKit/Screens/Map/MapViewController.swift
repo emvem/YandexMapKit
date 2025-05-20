@@ -13,6 +13,8 @@ import CoreLocation
 class MapViewController: UIViewController {
     
     private let locationManager = LocationManager()
+    private var searchManager: YMKSearchManager?
+    private var searchSession: YMKSearchSession?
     
     private let mapView = YMKMapView()
     private lazy var myLocationButton: UIButton = {
@@ -33,12 +35,22 @@ class MapViewController: UIViewController {
         button.setImage(UIImage(named: "current_location"), for: .normal)
         return button
     }()
+    
+    private let pin: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "pin")
+        return imageView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchManager = YMKSearchFactory.instance().createSearchManager(with: .combined)
+
         setupViews()
         setDefaultLocation()
+        
+        mapView.mapWindow.map.addCameraListener(with: self)
     }
     
     private func setDefaultLocation() {
@@ -60,6 +72,12 @@ class MapViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-16)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-24)
         }
+        
+        view.addSubview(pin)
+        pin.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.size.equalTo(73)
+        }
     }
     
     private func move(to location: YMKPoint) {
@@ -68,5 +86,44 @@ class MapViewController: UIViewController {
             animation: YMKAnimation(type: YMKAnimationType.smooth, duration: 0.5),
             cameraCallback: nil
         )
+    }
+    
+    func getAddress(for point: YMKPoint) {
+        searchManager = YMKSearchFactory.instance().createSearchManager(with: .combined)
+    }
+}
+
+extension MapViewController: YMKMapCameraListener {
+    func onCameraPositionChanged(with map: YMKMap, cameraPosition: YMKCameraPosition, cameraUpdateReason: YMKCameraUpdateReason, finished: Bool) {
+        if finished {
+            let responseHandler = {(searchResponse: YMKSearchResponse?, error: Error?) -> Void in
+                if let response = searchResponse {
+                    self.onSearchResponse(response)
+                } else {
+                    self.onSearchError(error!)
+                }
+            }
+
+            searchSession = searchManager!.submit(with: map.cameraPosition.target,
+                                                  zoom: 17,
+                                                  searchOptions: YMKSearchOptions(),
+                                                  responseHandler: responseHandler)
+        }
+    }
+    
+    func onSearchResponse(_ response: YMKSearchResponse) {
+        let mapObjects = mapView.mapWindow.map.mapObjects
+        mapObjects.clear()
+        guard let first = response.collection.children.first?.obj else {
+            return
+        }
+        let name = first.name
+        let description = first.descriptionText
+        print("name, ", name)
+        print("description, ", description)
+    }
+
+    func onSearchError(_ error: Error) {
+        print("error, ", error)
     }
 }
