@@ -7,32 +7,33 @@
 
 import UIKit
 import SnapKit
+import YandexMapsMobile
 
 class SearchCell: UITableViewCell {
     
     static let reuseId = String(describing: SearchCell.self)
         
-    let nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return label
     }()
     
-    let addressLabel: UILabel = {
+    private let addressLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.textColor = UIColor(red: 176/255, green: 171/255, blue: 171/255, alpha: 1)
         return label
     }()
     
-    let distanceLabel: UILabel = {
+    private let distanceLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         label.textAlignment = .right
         return label
     }()
 
-    lazy var icon: UIButton = {
+    private lazy var icon: UIButton = {
         let action: UIAction = UIAction { _ in
             print("tap")
         }
@@ -50,11 +51,16 @@ class SearchCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError()
     }
-
-    func configureUI() {
-        nameLabel.text = "Le Grande Plaza Hotel"
+    
+    func configureView(with obj: YMKGeoObject) {
+        let name = obj.name
+        let description = obj.descriptionText
+        nameLabel.text = name
         distanceLabel.text = "36 м"
-        addressLabel.text = "ул. Узбекистон Овози, 2"
+        addressLabel.text = description
+    }
+
+    private func configureUI() {
 
         selectionStyle = .none
         backgroundColor = .clear
@@ -87,6 +93,5 @@ class SearchCell: UITableViewCell {
             $0.centerY.equalTo(nameLabel)
             $0.trailing.equalToSuperview().offset(-16)
         }
-        
     }
 }

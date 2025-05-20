@@ -90,10 +90,6 @@ class MapViewController: UIViewController {
             cameraCallback: nil
         )
     }
-    
-    func getAddress(for point: YMKPoint) {
-        searchManager = YMKSearchFactory.instance().createSearchManager(with: .combined)
-    }
 }
 
 extension MapViewController: YMKMapCameraListener {
@@ -107,7 +103,7 @@ extension MapViewController: YMKMapCameraListener {
                 }
             }
 
-            searchSession = searchManager!.submit(with: map.cameraPosition.target,
+            searchSession = searchManager?.submit(with: map.cameraPosition.target,
                                                   zoom: 17,
                                                   searchOptions: YMKSearchOptions(),
                                                   responseHandler: responseHandler)
@@ -117,8 +113,6 @@ extension MapViewController: YMKMapCameraListener {
     }
     
     func onSearchResponse(_ response: YMKSearchResponse) {
-        let mapObjects = mapView.mapWindow.map.mapObjects
-        mapObjects.clear()
         guard let first = response.collection.children.first?.obj else {
             return
         }
@@ -137,7 +131,6 @@ extension MapViewController {
         let messageView = MapObjectMessageView(title: title,
                                                description: description,
                                                completion: {
-            print("completion")
             SwiftMessages.hide()
         })
         var config = SwiftMessages.Config()
@@ -149,7 +142,6 @@ extension MapViewController {
     
     func openSearch() {
         let messageView = SearchMessageView(completion: {
-            print("completion")
             SwiftMessages.hide()
         })
         var config = SwiftMessages.Config()
