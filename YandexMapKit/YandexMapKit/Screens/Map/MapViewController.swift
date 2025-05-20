@@ -20,13 +20,15 @@ class MapViewController: UIViewController {
     private let mapView = YMKMapView()
     private lazy var myLocationButton: UIButton = {
         let action: UIAction = UIAction { [weak self] _ in
-            guard let location = self?.locationManager.getCurrentLocation() else {
-                return
-            }
             
-            let lat = location.coordinate.latitude
-            let lon = location.coordinate.longitude
-            self?.move(to: YMKPoint(latitude: lat, longitude: lon))
+            self?.openSearch()
+//            guard let location = self?.locationManager.getCurrentLocation() else {
+//                return
+//            }
+//            
+//            let lat = location.coordinate.latitude
+//            let lon = location.coordinate.longitude
+//            self?.move(to: YMKPoint(latitude: lat, longitude: lon))
         }
         var configuration = UIButton.Configuration.plain()
         configuration.imagePadding = 8
@@ -109,6 +111,8 @@ extension MapViewController: YMKMapCameraListener {
                                                   zoom: 17,
                                                   searchOptions: YMKSearchOptions(),
                                                   responseHandler: responseHandler)
+        } else {
+            SwiftMessages.hide()
         }
     }
     
@@ -140,8 +144,19 @@ extension MapViewController {
         config.presentationContext = .window(windowLevel: .statusBar)
         config.presentationStyle = .bottom
         config.duration = .forever
-        config.dimMode = .gray(interactive: false)
         SwiftMessages.show(config: config, view: messageView)
-
+    }
+    
+    func openSearch() {
+        let messageView = SearchMessageView(completion: {
+            print("completion")
+            SwiftMessages.hide()
+        })
+        var config = SwiftMessages.Config()
+        config.presentationContext = .window(windowLevel: .statusBar)
+        config.presentationStyle = .bottom
+        config.duration = .forever
+        config.dimMode = .gray(interactive: true)
+        SwiftMessages.show(config: config, view: messageView)
     }
 }
