@@ -130,16 +130,3 @@ class MapViewController: UIViewController {
         )
     }
 }
-
-extension MapViewController {
-    func onSearchResponse(_ response: YMKSearchResponse) {
-        guard let first = response.collection.children.first?.obj else {
-            return
-        }
-        mapRouter.openMapObject(mapObject: first)
-    }
-
-    func onSearchError(_ error: Error) {
-        print("error, ", error)
-    }
-}

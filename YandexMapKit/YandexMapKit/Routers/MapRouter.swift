@@ -18,7 +18,7 @@ class MapRouter {
         let messageView = MapObjectMessageView(mapObject: mapObject,
                                                completion: { [weak self] obj in
             SwiftMessages.hide()
-            let bookmark = Bookmark(title: obj.name, subtitle: obj.descriptionText, latitude: nil, longitude: nil)
+            let bookmark = Bookmark(title: obj.name, subtitle: obj.descriptionText, latitude: obj.geometry.first?.point?.latitude, longitude: obj.geometry.first?.point?.longitude)
             self?.bookmarkRepository.saveBookmark(bookmark: bookmark)
         })
         var config = SwiftMessages.Config()
