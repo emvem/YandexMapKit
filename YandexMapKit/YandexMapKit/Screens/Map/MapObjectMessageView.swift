@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 import SwiftMessages
+import YandexMapsMobile
 
 class MapObjectMessageView: MessageView {
-    
     private lazy var closeButton: UIButton = {
         let action: UIAction = UIAction { [weak self] _ in
             guard let id = self?.id else {
@@ -63,7 +63,8 @@ class MapObjectMessageView: MessageView {
 
     private lazy var continueButton: UIButton = {
         let action: UIAction = UIAction { [weak self] _ in
-            self?.completion?()
+            guard let self = self else { return }
+            self.completion?(self.mapObject)
         }
         var configuration = UIButton.Configuration.plain()
         configuration.baseForegroundColor = .white
@@ -78,20 +79,17 @@ class MapObjectMessageView: MessageView {
     
     let cornerBackgroundView = CornerRoundingView(frame: .zero)
     
-    var completion: (() -> Void)?
+    private var completion: ((YMKGeoObject) -> Void)?
+    private let mapObject: YMKGeoObject
     
-    init(title: String?,
-         description: String?,
-         completion: (() -> Void)?) {
+    init(mapObject: YMKGeoObject,
+         completion: ((YMKGeoObject) -> Void)?) {
+        self.mapObject = mapObject
         self.completion = completion
         super.init(frame: .zero)
-        messageTitleLabel.text = title
-        messageDescriptionLabel.text = description
+        messageTitleLabel.text = mapObject.name
+        messageDescriptionLabel.text = mapObject.descriptionText
         configureUI()
-    }
-    
-    @objc private func continueButtonTap() {
-        completion?()
     }
     
     required init?(coder aDecoder: NSCoder) {

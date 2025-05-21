@@ -11,11 +11,15 @@ import YandexMapsMobile
 
 @MainActor
 class MapRouter {
-    func openMapObject(title: String?, description: String?) {
-        let messageView = MapObjectMessageView(title: title,
-                                               description: description,
-                                               completion: {
+    
+    private var bookmarkRepository: BookmarkRepository = CoreDataBookmarkRepository()
+
+    func openMapObject(mapObject: YMKGeoObject) {
+        let messageView = MapObjectMessageView(mapObject: mapObject,
+                                               completion: { [weak self] obj in
             SwiftMessages.hide()
+            let bookmark = Bookmark(title: obj.name, subtitle: obj.descriptionText, latitude: nil, longitude: nil)
+            self?.bookmarkRepository.saveBookmark(bookmark: bookmark)
         })
         var config = SwiftMessages.Config()
         config.presentationContext = .window(windowLevel: .statusBar)

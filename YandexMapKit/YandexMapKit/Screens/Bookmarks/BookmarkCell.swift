@@ -27,8 +27,8 @@ class BookmarkCell: UITableViewCell {
     }()
 
     lazy var bookmarkIcon: UIButton = {
-        let action: UIAction = UIAction { _ in
-            print("tap")
+        let action: UIAction = UIAction { [weak self] _ in
+            self?.completion?()
         }
         var configuration = UIButton.Configuration.plain()
         let button = UIButton(configuration: configuration, primaryAction: action)
@@ -44,10 +44,16 @@ class BookmarkCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    
+    var completion: (() -> Void)?
+    
+    func configure(with bookmark: Bookmark, completion: @escaping () -> Void) {
+        self.completion = completion
+        nameLabel.text = bookmark.title
+        addressLabel.text = bookmark.subtitle
+    }
 
     func configureUI() {
-        nameLabel.text = "Le Grande Plaza Hotel"
-        addressLabel.text = "ул. Узбекистон Овози, 2"
 
         selectionStyle = .none
         backgroundColor = .clear

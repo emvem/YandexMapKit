@@ -13,12 +13,24 @@ import SwiftMessages
 
 class MapViewController: UIViewController {
     
-    private let locationManager = LocationManager()
-    private var searchManager: SearchManager = SearchManager()
-    
+    private let locationManager: LocationManager
+    private var searchManager: SearchManager
     private let mapView = YMKMapView()
     private let searchBar = UISearchBar()
     private let mapRouter: MapRouter = MapRouter()
+    
+    init(searchManager: SearchManager,
+         locationManager: LocationManager
+    ) {
+        self.searchManager = searchManager
+        self.locationManager = locationManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private lazy var myLocationButton: UIButton = {
         let action: UIAction = UIAction { [weak self] _ in
             guard let location = self?.locationManager.getCurrentLocation() else {
@@ -65,12 +77,16 @@ class MapViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
             self.mapRouter.openSearch(callback: { [weak self] item in
                 self?.searchBar.text = item.name
-                if let point = item.geometry.first?.point {
-                    self?.move(to: point)
-                }
-                self?.mapRouter.openMapObject(title: item.name, description: item.descriptionText)
+                self?.openMapObject(obj: item)
             })
         })
+    }
+    
+    func openMapObject(obj: YMKGeoObject) {
+        if let point = obj.geometry.first?.point {
+            move(to: point)
+        }
+        mapRouter.openMapObject(mapObject: obj)
     }
     
     private func setDefaultLocation() {
@@ -120,9 +136,7 @@ extension MapViewController {
         guard let first = response.collection.children.first?.obj else {
             return
         }
-        let name = first.name
-        let description = first.descriptionText
-        mapRouter.openMapObject(title: name, description: description)
+        mapRouter.openMapObject(mapObject: first)
     }
 
     func onSearchError(_ error: Error) {

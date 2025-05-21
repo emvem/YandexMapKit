@@ -1,5 +1,5 @@
 //
-//  CoreDataBookrmarkRepository.swift
+//  CoreDataBookmarkRepository.swift
 //  YandexMapKit
 //
 //  Created by Vadim Em on 21.05.2025.
@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class CoreDataBookrmarkRepository: BookmarkRepository {
+class CoreDataBookmarkRepository: BookmarkRepository {
     let coreDataManager: CoreDataManager = CoreDataManager.shared
     
     func saveBookmark(bookmark: Bookmark) {
