@@ -1,5 +1,5 @@
 //
-//  AddressCell.swift
+//  BookmarkCell.swift
 //  YandexMapKit
 //
 //  Created by Vadim Em on 20.05.2025.
@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-class AddressCell: UITableViewCell {
+class BookmarkCell: UITableViewCell {
     
-    static let reuseId = String(describing: AddressCell.self)
+    static let reuseId = String(describing: BookmarkCell.self)
     
     let backgroundContentView = UIView()
     
