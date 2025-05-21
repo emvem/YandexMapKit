@@ -11,6 +11,8 @@
 		DD86C0E52DDC564C006678AC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C0E42DDC564C006678AC /* SnapKit */; };
 		DD86C1002DDC9C25006678AC /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C0FF2DDC9C25006678AC /* SwiftMessages */; };
 		DD86C1132DDDA017006678AC /* MapObject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD86C1112DDDA017006678AC /* MapObject.xcdatamodeld */; };
+		DD86C1262DDDB616006678AC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C1252DDDB616006678AC /* RxCocoa */; };
+		DD86C1282DDDB616006678AC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C1272DDDB616006678AC /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 			files = (
 				DD86C0E22DDC5640006678AC /* YandexMapsMobile in Frameworks */,
 				DD86C1002DDC9C25006678AC /* SwiftMessages in Frameworks */,
+				DD86C1282DDDB616006678AC /* RxSwift in Frameworks */,
+				DD86C1262DDDB616006678AC /* RxCocoa in Frameworks */,
 				DD86C0E52DDC564C006678AC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +222,7 @@
 				DD86C0E02DDC5640006678AC /* XCRemoteSwiftPackageReference "YandexMapsMobile" */,
 				DD86C0E32DDC564C006678AC /* XCRemoteSwiftPackageReference "SnapKit" */,
 				DD86C0FE2DDC9C25006678AC /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+				DD86C1242DDDB616006678AC /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DDFF94632DDB62BF00F7A19A /* Products */;
@@ -659,6 +664,14 @@
 				version = 10.0.1;
 			};
 		};
+		DD86C1242DDDB616006678AC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = exactVersion;
+				version = 6.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -676,6 +689,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD86C0FE2DDC9C25006678AC /* XCRemoteSwiftPackageReference "SwiftMessages" */;
 			productName = SwiftMessages;
+		};
+		DD86C1252DDDB616006678AC /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD86C1242DDDB616006678AC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		DD86C1272DDDB616006678AC /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD86C1242DDDB616006678AC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

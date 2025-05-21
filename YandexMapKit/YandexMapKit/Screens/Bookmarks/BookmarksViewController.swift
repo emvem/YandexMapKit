@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import SnapKit
 import YandexMapsMobile
+import RxSwift
+import RxCocoa
 
-class BookmarksViewController: UITableViewController {
+class BookmarksViewController: UIViewController {
     
     var repository: BookmarkRepository
-    var bookmarks: [Bookmark] = []
+    var bookmarks: BehaviorRelay<[Bookmark]> = BehaviorRelay<[Bookmark]>(value: [])
+    
+    let disposeBag = DisposeBag()
     
     weak var appRouter: AppRouter?
+    
+    private let tableView = UITableView()
     
     init(
         repository: BookmarkRepository,
@@ -21,7 +28,7 @@ class BookmarksViewController: UITableViewController {
     ) {
         self.repository = repository
         self.appRouter = appRouter
-        super.init(style: .grouped)
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -31,37 +38,37 @@ class BookmarksViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        tableView.backgroundColor = .clear
+        tableView.rowHeight = 90
         tableView.separatorStyle = .none
         
         tableView.register(BookmarkCell.self, forCellReuseIdentifier: BookmarkCell.reuseId)
         view.backgroundColor = UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 0.5)
+        
+        bindTableView()
+    }
+    
+    func bindTableView() {
+        bookmarks
+            .bind(to: tableView.rx.items(cellIdentifier: BookmarkCell.reuseId)) { row, element, cell in
+                (cell as! BookmarkCell).configure(with: element, completion: { [weak self] in
+                    let obj = YMKGeoObject(name: element.title, descriptionText: element.subtitle, geometry: [.init(point: .init(latitude: element.latitude ?? 0, longitude: element.longitude ?? 0))], boundingBox: nil, attributionMap: .init(), metadataContainer: .init(), aref: [])
+                    self?.appRouter?.openMapObject(mapObject: obj)
+                })
+            }
+            .disposed(by: disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        bookmarks = repository.getBookmarks()
-        tableView.reloadData()
-    }
-}
-
-extension BookmarksViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookmarks.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BookmarkCell.reuseId, for: indexPath) as! BookmarkCell
-        let bookmark = bookmarks[indexPath.row]
-        cell.configure(with: bookmark, completion: { [weak self] in
-            let obj = YMKGeoObject(name: bookmark.title, descriptionText: bookmark.subtitle, geometry: [.init(point: .init(latitude: bookmark.latitude ?? 0, longitude: bookmark.longitude ?? 0))], boundingBox: nil, attributionMap: .init(), metadataContainer: .init(), aref: [])
-            self?.appRouter?.openMapObject(mapObject: obj)
-        })
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        let bookmarks = repository.getBookmarks()
+        self.bookmarks.accept(bookmarks)
     }
 }
 
