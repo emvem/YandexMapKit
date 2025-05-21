@@ -10,6 +10,7 @@
 		DD86C0E22DDC5640006678AC /* YandexMapsMobile in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C0E12DDC5640006678AC /* YandexMapsMobile */; };
 		DD86C0E52DDC564C006678AC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C0E42DDC564C006678AC /* SnapKit */; };
 		DD86C1002DDC9C25006678AC /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = DD86C0FF2DDC9C25006678AC /* SwiftMessages */; };
+		DD86C1132DDDA017006678AC /* MapObject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD86C1112DDDA017006678AC /* MapObject.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD86C1122DDDA017006678AC /* MapObject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapObject.xcdatamodel; sourceTree = "<group>"; };
 		DDFF94622DDB62BF00F7A19A /* YandexMapKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMapKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFF94782DDB62C100F7A19A /* YandexMapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YandexMapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFF94822DDB62C100F7A19A /* YandexMapKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YandexMapKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 		DDFF94592DDB62BF00F7A19A = {
 			isa = PBXGroup;
 			children = (
+				DD86C1112DDDA017006678AC /* MapObject.xcdatamodeld */,
 				DDFF94642DDB62BF00F7A19A /* YandexMapKit */,
 				DDFF947B2DDB62C100F7A19A /* YandexMapKitTests */,
 				DDFF94852DDB62C100F7A19A /* YandexMapKitUITests */,
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD86C1132DDDA017006678AC /* MapObject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +678,19 @@
 			productName = SwiftMessages;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DD86C1112DDDA017006678AC /* MapObject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DD86C1122DDDA017006678AC /* MapObject.xcdatamodel */,
+			);
+			currentVersion = DD86C1122DDDA017006678AC /* MapObject.xcdatamodel */;
+			path = MapObject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DDFF945A2DDB62BF00F7A19A /* Project object */;
 }
