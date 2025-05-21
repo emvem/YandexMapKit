@@ -14,11 +14,11 @@ import SwiftMessages
 class MapViewController: UIViewController {
     
     private let locationManager = LocationManager()
-    private var searchManager: YMKSearchManager?
-    private var searchSession: YMKSearchSession?
+    private var searchManager: SearchManager = SearchManager()
     
     private let mapView = YMKMapView()
     private let searchBar = UISearchBar()
+    private let mapRouter: MapRouter = MapRouter()
     private lazy var myLocationButton: UIButton = {
         let action: UIAction = UIAction { [weak self] _ in
             guard let location = self?.locationManager.getCurrentLocation() else {
@@ -47,8 +47,6 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchManager = YMKSearchFactory.instance().createSearchManager(with: .combined)
-
         setupViews()
         setDefaultLocation()
         setupSearchBar()
@@ -65,7 +63,10 @@ class MapViewController: UIViewController {
     }
     
     @objc func handleTap() {
-        openSearch()
+        mapRouter.openSearch(callback: { [weak self] item in
+            self?.searchBar.text = item.name
+            self?.mapRouter.openMapObject(title: item.name, description: item.descriptionText)
+        })
     }
     
     private func setDefaultLocation() {
@@ -120,11 +121,10 @@ extension MapViewController: YMKMapCameraListener {
                     self.onSearchError(error!)
                 }
             }
-
-            searchSession = searchManager?.submit(with: map.cameraPosition.target,
-                                                  zoom: 17,
-                                                  searchOptions: YMKSearchOptions(),
-                                                  responseHandler: responseHandler)
+            
+            searchManager.search(place: map.cameraPosition.target,
+                                 zoom: 17,
+                                 responseHandler: responseHandler)
         } else {
             SwiftMessages.hide()
         }
@@ -136,41 +136,10 @@ extension MapViewController: YMKMapCameraListener {
         }
         let name = first.name
         let description = first.descriptionText
-        openMapObject(title: name, description: description)
+        mapRouter.openMapObject(title: name, description: description)
     }
 
     func onSearchError(_ error: Error) {
         print("error, ", error)
-    }
-}
-
-extension MapViewController {
-    func openMapObject(title: String?, description: String?) {
-        let messageView = MapObjectMessageView(title: title,
-                                               description: description,
-                                               completion: {
-            SwiftMessages.hide()
-        })
-        var config = SwiftMessages.Config()
-        config.presentationContext = .window(windowLevel: .statusBar)
-        config.presentationStyle = .bottom
-        config.duration = .forever
-        SwiftMessages.show(config: config, view: messageView)
-    }
-    
-    func openSearch() {
-        let messageView = SearchMessageView(completion: { [weak self] item in
-            SwiftMessages.hide()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-                self?.searchBar.text = item.name
-                self?.openMapObject(title: item.name, description: item.descriptionText)
-            })
-        })
-        var config = SwiftMessages.Config()
-        config.presentationContext = .window(windowLevel: .statusBar)
-        config.presentationStyle = .bottom
-        config.duration = .forever
-        config.dimMode = .gray(interactive: true)
-        SwiftMessages.show(config: config, view: messageView)
     }
 }
