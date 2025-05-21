@@ -50,8 +50,6 @@ class MapViewController: UIViewController {
         setupViews()
         setDefaultLocation()
         setupSearchBar()
-        
-        mapView.mapWindow.map.addCameraListener(with: self)
     }
     
     private func setupSearchBar() {
@@ -63,9 +61,15 @@ class MapViewController: UIViewController {
     }
     
     @objc func handleTap() {
-        mapRouter.openSearch(callback: { [weak self] item in
-            self?.searchBar.text = item.name
-            self?.mapRouter.openMapObject(title: item.name, description: item.descriptionText)
+        SwiftMessages.hide()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+            self.mapRouter.openSearch(callback: { [weak self] item in
+                self?.searchBar.text = item.name
+                if let point = item.geometry.first?.point {
+                    self?.move(to: point)
+                }
+                self?.mapRouter.openMapObject(title: item.name, description: item.descriptionText)
+            })
         })
     }
     
@@ -111,25 +115,7 @@ class MapViewController: UIViewController {
     }
 }
 
-extension MapViewController: YMKMapCameraListener {
-    func onCameraPositionChanged(with map: YMKMap, cameraPosition: YMKCameraPosition, cameraUpdateReason: YMKCameraUpdateReason, finished: Bool) {
-        if finished {
-            let responseHandler = {(searchResponse: YMKSearchResponse?, error: Error?) -> Void in
-                if let response = searchResponse {
-                    self.onSearchResponse(response)
-                } else {
-                    self.onSearchError(error!)
-                }
-            }
-            
-            searchManager.search(place: map.cameraPosition.target,
-                                 zoom: 17,
-                                 responseHandler: responseHandler)
-        } else {
-            SwiftMessages.hide()
-        }
-    }
-    
+extension MapViewController {
     func onSearchResponse(_ response: YMKSearchResponse) {
         guard let first = response.collection.children.first?.obj else {
             return

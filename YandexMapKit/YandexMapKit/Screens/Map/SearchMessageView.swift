@@ -46,6 +46,9 @@ class SearchMessageView: MessageView {
         super.init(frame: .zero)
         
         configureUI()
+        
+        tableView.keyboardDismissMode = .onDrag
+        searchBar.becomeFirstResponder()
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -34,12 +34,4 @@ class SearchManager {
             searchOptions: YMKSearchOptions(),
             responseHandler: responseHandler)
     }
-    
-    func search(place: YMKPoint, zoom: NSNumber, responseHandler: @escaping YMKSearchSessionResponseHandler) {
-        searchSession = searchManager?.submit(with: place,
-                                              zoom: zoom,
-                                              searchOptions: YMKSearchOptions(),
-                                              responseHandler: responseHandler)
-
-    }
 }
